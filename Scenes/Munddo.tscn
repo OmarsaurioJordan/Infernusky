@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnnawj116xnt7"]
+
+[ext_resource type="PackedScene" uid="uid://bv7uosr40k6r4" path="res://Scenes/Monigote.tscn" id="1_t5umj"]
+
+[node name="Mundo" type="Node2D"]
+metadata/_edit_lock_ = true
+
+[node name="Suelo" type="Panel" parent="."]
+offset_left = 1.0
+offset_top = 581.0
+offset_right = 1154.0
+offset_bottom = 649.0
+metadata/_edit_lock_ = true
+
+[node name="LimitLeft" type="Node2D" parent="."]
+position = Vector2(58, 424)
+metadata/_edit_lock_ = true
+
+[node name="LimitRight" type="Node2D" parent="."]
+position = Vector2(1087, 424)
+metadata/_edit_lock_ = true
+
+[node name="Monigote1" parent="." instance=ExtResource("1_t5umj")]
+position = Vector2(262, 431)
+
+[node name="Monigote2" parent="." instance=ExtResource("1_t5umj")]
+position = Vector2(849, 445)
+mando = "2"
