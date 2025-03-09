@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgcbpec4usox"
-path="res://.godot/imported/img_ladojump.jpg-b556da9894525bdaea8501edc1c1be19.ctex"
+uid="uid://ci6fvgjohklw1"
+path="res://.godot/imported/img_jump.png-77e5e074589f0360703db42a440a2e34.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/img_ladojump.jpg"
-dest_files=["res://.godot/imported/img_ladojump.jpg-b556da9894525bdaea8501edc1c1be19.ctex"]
+source_file="res://Sprites/img_jump.png"
+dest_files=["res://.godot/imported/img_jump.png-77e5e074589f0360703db42a440a2e34.ctex"]
 
 [params]
 

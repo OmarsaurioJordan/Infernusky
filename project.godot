@@ -23,6 +23,8 @@ window/stretch/mode="viewport"
 [global_group]
 
 body=""
+hit=""
+solid=""
 
 [input]
 
@@ -95,4 +97,4 @@ key_jump2={
 
 [rendering]
 
-environment/defaults/default_clear_color=Color(0.737255, 0.721569, 0.72549, 1)
+environment/defaults/default_clear_color=Color(0.824787, 0.760686, 0.681034, 1)
