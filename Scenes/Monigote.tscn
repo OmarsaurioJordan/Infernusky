@@ -1,0 +1,499 @@
+[gd_scene load_steps=25 format=3 uid="uid://bv7uosr40k6r4"]
+
+[ext_resource type="Script" uid="uid://bht2hm62drbm4" path="res://Scripts/Monigote.gd" id="1_viouq"]
+[ext_resource type="Texture2D" uid="uid://dgr6g2y68rt" path="res://Sprites/img_idle.png" id="2_w8n3t"]
+[ext_resource type="Texture2D" uid="uid://j2h1vibwcod5" path="res://Sprites/img_down.png" id="3_kgvgv"]
+[ext_resource type="Texture2D" uid="uid://inuyuqobl2an" path="res://Sprites/img_cae.png" id="4_eil70"]
+[ext_resource type="Texture2D" uid="uid://ci6fvgjohklw1" path="res://Sprites/img_jump.png" id="5_qe0nk"]
+[ext_resource type="Texture2D" uid="uid://cfonqce2om8aq" path="res://Sprites/img_ladocae.png" id="6_a38c5"]
+[ext_resource type="Texture2D" uid="uid://bhw3tw2e7h2h7" path="res://Sprites/img_ladojump.png" id="7_50t7e"]
+[ext_resource type="Texture2D" uid="uid://cpg4wm181xj1d" path="res://Sprites/img_run.png" id="8_ggfin"]
+[ext_resource type="Texture2D" uid="uid://dg27cgldm7ndr" path="res://Sprites/img_suelo.png" id="9_enn8l"]
+[ext_resource type="Texture2D" uid="uid://dhodynac1lr2l" path="res://Sprites/img_up.png" id="10_gh0o2"]
+[ext_resource type="Texture2D" uid="uid://dqv001ru7u2sr" path="res://Sprites/img_hit.png" id="11_00jpe"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u2sg4"]
+radius = 19.0
+height = 162.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3jf6m"]
+radius = 83.5225
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i232a"]
+radius = 72.0
+height = 648.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jxdt5"]
+radius = 92.0
+height = 368.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0v44f"]
+radius = 92.0
+height = 400.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sip15"]
+radius = 56.0
+height = 664.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3faqy"]
+radius = 92.0
+height = 576.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3ohwx"]
+radius = 80.0
+height = 528.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oeptt"]
+radius = 92.0
+height = 656.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oxl2o"]
+radius = 92.0
+height = 200.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sxxnu"]
+radius = 72.0
+height = 656.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d2vdm"]
+radius = 92.0
+height = 640.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_42ksh"]
+radius = 84.3801
+
+[node name="Monigote" type="Node2D"]
+script = ExtResource("1_viouq")
+metadata/_edit_lock_ = true
+
+[node name="Solidisimo" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+metadata/_edit_lock_ = true
+
+[node name="Coli1" type="CollisionShape2D" parent="Solidisimo"]
+position = Vector2(0, -82)
+shape = SubResource("CapsuleShape2D_u2sg4")
+debug_color = Color(0.933333, 0.188235, 0.45098, 0.129412)
+metadata/_edit_lock_ = true
+
+[node name="Estados" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="ImgIdle" type="Sprite2D" parent="Estados"]
+visible = false
+position = Vector2(3, -90)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_w8n3t")
+metadata/_edit_lock_ = true
+
+[node name="Msk" type="Area2D" parent="Estados/ImgIdle"]
+collision_mask = 0
+monitoring = false
+metadata/_edit_lock_ = true
+
+[node name="Coli1" type="CollisionShape2D" parent="Estados/ImgIdle/Msk"]
+position = Vector2(24, -200)
+shape = SubResource("CircleShape2D_3jf6m")
+metadata/_edit_lock_ = true
+
+[node name="Radio" type="Node2D" parent="Estados/ImgIdle/Msk/Coli1"]
+position = Vector2(84, 0)
+metadata/_edit_lock_ = true
+
+[node name="Coli2" type="CollisionShape2D" parent="Estados/ImgIdle/Msk"]
+position = Vector2(12, -12)
+shape = SubResource("CircleShape2D_3jf6m")
+metadata/_edit_lock_ = true
+
+[node name="Coli3" type="CollisionShape2D" parent="Estados/ImgIdle/Msk"]
+position = Vector2(0, 204)
+shape = SubResource("CircleShape2D_3jf6m")
+metadata/_edit_lock_ = true
+
+[node name="Solid" type="Area2D" parent="Estados/ImgIdle"]
+collision_layer = 2
+collision_mask = 2
+monitoring = false
+monitorable = false
+metadata/_edit_lock_ = true
+
+[node name="Coli1" type="CollisionShape2D" parent="Estados/ImgIdle/Solid"]
+position = Vector2(-12, 36)
+shape = SubResource("CapsuleShape2D_i232a")
+metadata/_edit_lock_ = true
+
+[node name="ImgDown" type="Sprite2D" parent="Estados"]
+visible = false
+position = Vector2(-4, -56)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_kgvgv")
+metadata/_edit_lock_ = true
+
+[node name="Msk" type="Area2D" parent="Estados/ImgDown"]
+collision_mask = 0
+monitoring = false
+metadata/_edit_lock_ = true
+
+[node name="Coli1" type="CollisionShape2D" parent="Estados/ImgDown/Msk"]
+position = Vector2(12, 148)
+shape = SubResource("CircleShape2D_3jf6m")
+metadata/_edit_lock_ = true
+
+[node name="Coli2" type="CollisionShape2D" parent="Estados/ImgDown/Msk"]
+position = Vector2(-8, 152)
+shape = SubResource("CircleShape2D_3jf6m")
+metadata/_edit_lock_ = true
+
+[node name="Coli3" type="CollisionShape2D" parent="Estados/ImgDown/Msk"]
+position = Vector2(36, 152)
+shape = SubResource("CircleShape2D_3jf6m")
+metadata/_edit_lock_ = true
+
+[node name="Solid" type="Area2D" parent="Estados/ImgDown"]
+collision_layer = 2
+collision_mask = 2
+monitoring = false
+monitorable = false
+metadata/_edit_lock_ = true
+
+[node name="Coli1" type="CollisionShape2D" parent="Estados/ImgDown/Solid"]
+position = Vector2(-24, 40)
+shape = SubResource("CapsuleShape2D_jxdt5")
+metadata/_edit_lock_ = true
+
+[node name="ImgCae" type="Sprite2D" parent="Estados"]
+visible = false
+position = Vector2(-1, -68)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_eil70")
+metadata/_edit_lock_ = true
+
+[node name="Msk" type="Area2D" parent="Estados/ImgCae"]
+collision_mask = 0
+monitoring = false
+metadata/_edit_lock_ = true
+
+[node name="Coli1" type="CollisionShape2D" parent="Estados/ImgCae/Msk"]
+position = Vector2(24, -76)
+shape = SubResource("CircleShape2D_3jf6m")
+metadata/_edit_lock_ = true
+
+[node name="Coli2" type="CollisionShape2D" parent="Estados/ImgCae/Msk"]
+position = Vector2(20, 36)
+shape = SubResource("CircleShape2D_3jf6m")
+metadata/_edit_lock_ = true
+
+[node name="Coli3" type="CollisionShape2D" parent="Estados/ImgCae/Msk"]
+position = Vector2(8, 156)
+shape = SubResource("CircleShape2D_3jf6m")
+metadata/_edit_lock_ = true
+
+[node name="Solid" type="Area2D" parent="Estados/ImgCae"]
+collision_layer = 2
+collision_mask = 2
+monitoring = false
+monitorable = false
+metadata/_edit_lock_ = true
+
+[node name="Coli1" type="CollisionShape2D" parent="Estados/ImgCae/Solid"]
+position = Vector2(12, 68)
+shape = SubResource("CapsuleShape2D_0v44f")
+metadata/_edit_lock_ = true
+
+[node name="ImgJump" type="Sprite2D" parent="Estados"]
+visible = false
+position = Vector2(3, -89)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5_qe0nk")
+metadata/_edit_lock_ = true
+
+[node name="Msk" type="Area2D" parent="Estados/ImgJump"]
+collision_mask = 0
+monitoring = false
+metadata/_edit_lock_ = true
+
+[node name="Coli1" type="CollisionShape2D" parent="Estados/ImgJump/Msk"]
+position = Vector2(-20, -236)
+shape = SubResource("CircleShape2D_3jf6m")
+metadata/_edit_lock_ = true
+
+[node name="Coli2" type="CollisionShape2D" parent="Estados/ImgJump/Msk"]
+position = Vector2(-20, -36)
+shape = SubResource("CircleShape2D_3jf6m")
+metadata/_edit_lock_ = true
+
+[node name="Coli3" type="CollisionShape2D" parent="Estados/ImgJump/Msk"]
+position = Vector2(-24, 168)
+shape = SubResource("CircleShape2D_3jf6m")
+metadata/_edit_lock_ = true
+
+[node name="Solid" type="Area2D" parent="Estados/ImgJump"]
+collision_layer = 2
+collision_mask = 2
+monitoring = false
+monitorable = false
+metadata/_edit_lock_ = true
+
+[node name="Coli1" type="CollisionShape2D" parent="Estados/ImgJump/Solid"]
+position = Vector2(-12, 20)
+shape = SubResource("CapsuleShape2D_sip15")
+metadata/_edit_lock_ = true
+
+[node name="ImgLadocae" type="Sprite2D" parent="Estados"]
+visible = false
+position = Vector2(-5, -83)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("6_a38c5")
+metadata/_edit_lock_ = true
+
+[node name="Msk" type="Area2D" parent="Estados/ImgLadocae"]
+collision_mask = 0
+monitoring = false
+metadata/_edit_lock_ = true
+
+[node name="Coli1" type="CollisionShape2D" parent="Estados/ImgLadocae/Msk"]
+position = Vector2(8, -144)
+shape = SubResource("CircleShape2D_3jf6m")
+metadata/_edit_lock_ = true
+
+[node name="Coli2" type="CollisionShape2D" parent="Estados/ImgLadocae/Msk"]
+position = Vector2(8, 32)
+shape = SubResource("CircleShape2D_3jf6m")
+metadata/_edit_lock_ = true
+
+[node name="Coli3" type="CollisionShape2D" parent="Estados/ImgLadocae/Msk"]
+position = Vector2(68, 200)
+shape = SubResource("CircleShape2D_3jf6m")
+metadata/_edit_lock_ = true
+
+[node name="Solid" type="Area2D" parent="Estados/ImgLadocae"]
+collision_layer = 2
+collision_mask = 2
+monitoring = false
+monitorable = false
+metadata/_edit_lock_ = true
+
+[node name="Coli1" type="CollisionShape2D" parent="Estados/ImgLadocae/Solid"]
+position = Vector2(12, 32)
+rotation = -0.23911
+shape = SubResource("CapsuleShape2D_3faqy")
+metadata/_edit_lock_ = true
+
+[node name="ImgLadojump" type="Sprite2D" parent="Estados"]
+visible = false
+position = Vector2(-1, -93)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("7_50t7e")
+metadata/_edit_lock_ = true
+
+[node name="Msk" type="Area2D" parent="Estados/ImgLadojump"]
+collision_mask = 0
+monitoring = false
+metadata/_edit_lock_ = true
+
+[node name="Coli1" type="CollisionShape2D" parent="Estados/ImgLadojump/Msk"]
+position = Vector2(112, -204)
+shape = SubResource("CircleShape2D_3jf6m")
+metadata/_edit_lock_ = true
+
+[node name="Coli2" type="CollisionShape2D" parent="Estados/ImgLadojump/Msk"]
+position = Vector2(36, -32)
+shape = SubResource("CircleShape2D_3jf6m")
+metadata/_edit_lock_ = true
+
+[node name="Coli3" type="CollisionShape2D" parent="Estados/ImgLadojump/Msk"]
+position = Vector2(-52, 192)
+shape = SubResource("CircleShape2D_3jf6m")
+metadata/_edit_lock_ = true
+
+[node name="Solid" type="Area2D" parent="Estados/ImgLadojump"]
+collision_layer = 2
+collision_mask = 2
+monitoring = false
+monitorable = false
+metadata/_edit_lock_ = true
+
+[node name="Coli1" type="CollisionShape2D" parent="Estados/ImgLadojump/Solid"]
+position = Vector2(12, -8)
+rotation = 0.359538
+shape = SubResource("CapsuleShape2D_3ohwx")
+metadata/_edit_lock_ = true
+
+[node name="ImgRun" type="Sprite2D" parent="Estados"]
+visible = false
+position = Vector2(17, -91)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("8_ggfin")
+metadata/_edit_lock_ = true
+
+[node name="Msk" type="Area2D" parent="Estados/ImgRun"]
+collision_mask = 0
+monitoring = false
+metadata/_edit_lock_ = true
+
+[node name="Coli1" type="CollisionShape2D" parent="Estados/ImgRun/Msk"]
+position = Vector2(104, -188)
+shape = SubResource("CircleShape2D_3jf6m")
+metadata/_edit_lock_ = true
+
+[node name="Coli2" type="CollisionShape2D" parent="Estados/ImgRun/Msk"]
+position = Vector2(28, -28)
+shape = SubResource("CircleShape2D_3jf6m")
+metadata/_edit_lock_ = true
+
+[node name="Coli3" type="CollisionShape2D" parent="Estados/ImgRun/Msk"]
+position = Vector2(-48, 168)
+shape = SubResource("CircleShape2D_3jf6m")
+metadata/_edit_lock_ = true
+
+[node name="Solid" type="Area2D" parent="Estados/ImgRun"]
+collision_layer = 2
+collision_mask = 2
+monitoring = false
+monitorable = false
+metadata/_edit_lock_ = true
+
+[node name="Coli1" type="CollisionShape2D" parent="Estados/ImgRun/Solid"]
+position = Vector2(16, 36)
+rotation = 0.359538
+shape = SubResource("CapsuleShape2D_oeptt")
+metadata/_edit_lock_ = true
+
+[node name="ImgSuelo" type="Sprite2D" parent="Estados"]
+visible = false
+position = Vector2(3, -33)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("9_enn8l")
+metadata/_edit_lock_ = true
+
+[node name="Msk" type="Area2D" parent="Estados/ImgSuelo"]
+collision_mask = 0
+monitoring = false
+metadata/_edit_lock_ = true
+
+[node name="Coli1" type="CollisionShape2D" parent="Estados/ImgSuelo/Msk"]
+position = Vector2(-64, 28)
+shape = SubResource("CircleShape2D_3jf6m")
+metadata/_edit_lock_ = true
+
+[node name="Coli2" type="CollisionShape2D" parent="Estados/ImgSuelo/Msk"]
+position = Vector2(-4, 68)
+shape = SubResource("CircleShape2D_3jf6m")
+metadata/_edit_lock_ = true
+
+[node name="Coli3" type="CollisionShape2D" parent="Estados/ImgSuelo/Msk"]
+position = Vector2(36, -48)
+shape = SubResource("CircleShape2D_3jf6m")
+metadata/_edit_lock_ = true
+
+[node name="Solid" type="Area2D" parent="Estados/ImgSuelo"]
+collision_layer = 2
+collision_mask = 2
+monitoring = false
+monitorable = false
+metadata/_edit_lock_ = true
+
+[node name="Coli1" type="CollisionShape2D" parent="Estados/ImgSuelo/Solid"]
+position = Vector2(-8, 28)
+shape = SubResource("CapsuleShape2D_oxl2o")
+metadata/_edit_lock_ = true
+
+[node name="ImgUp" type="Sprite2D" parent="Estados"]
+visible = false
+position = Vector2(-3, -91)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("10_gh0o2")
+metadata/_edit_lock_ = true
+
+[node name="Msk" type="Area2D" parent="Estados/ImgUp"]
+collision_mask = 0
+monitoring = false
+metadata/_edit_lock_ = true
+
+[node name="Coli1" type="CollisionShape2D" parent="Estados/ImgUp/Msk"]
+position = Vector2(-44, -204)
+shape = SubResource("CircleShape2D_3jf6m")
+metadata/_edit_lock_ = true
+
+[node name="Coli2" type="CollisionShape2D" parent="Estados/ImgUp/Msk"]
+position = Vector2(-8, -32)
+shape = SubResource("CircleShape2D_3jf6m")
+metadata/_edit_lock_ = true
+
+[node name="Coli3" type="CollisionShape2D" parent="Estados/ImgUp/Msk"]
+position = Vector2(-8, 196)
+shape = SubResource("CircleShape2D_3jf6m")
+metadata/_edit_lock_ = true
+
+[node name="Solid" type="Area2D" parent="Estados/ImgUp"]
+collision_layer = 2
+collision_mask = 2
+monitoring = false
+monitorable = false
+metadata/_edit_lock_ = true
+
+[node name="Coli1" type="CollisionShape2D" parent="Estados/ImgUp/Solid"]
+position = Vector2(-24, 32)
+shape = SubResource("CapsuleShape2D_sxxnu")
+metadata/_edit_lock_ = true
+
+[node name="ImgHit" type="Sprite2D" parent="Estados"]
+position = Vector2(0, -86)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("11_00jpe")
+metadata/_edit_lock_ = true
+
+[node name="Msk" type="Area2D" parent="Estados/ImgHit"]
+collision_mask = 0
+monitoring = false
+metadata/_edit_lock_ = true
+
+[node name="Coli1" type="CollisionShape2D" parent="Estados/ImgHit/Msk"]
+position = Vector2(0, -208)
+shape = SubResource("CircleShape2D_3jf6m")
+metadata/_edit_lock_ = true
+
+[node name="Coli2" type="CollisionShape2D" parent="Estados/ImgHit/Msk"]
+position = Vector2(-48, -40)
+shape = SubResource("CircleShape2D_3jf6m")
+metadata/_edit_lock_ = true
+
+[node name="Coli3" type="CollisionShape2D" parent="Estados/ImgHit/Msk"]
+position = Vector2(-48, 172)
+shape = SubResource("CircleShape2D_3jf6m")
+metadata/_edit_lock_ = true
+
+[node name="Solid" type="Area2D" parent="Estados/ImgHit"]
+collision_layer = 2
+collision_mask = 2
+monitoring = false
+monitorable = false
+metadata/_edit_lock_ = true
+
+[node name="Coli1" type="CollisionShape2D" parent="Estados/ImgHit/Solid"]
+position = Vector2(-36, 24)
+shape = SubResource("CapsuleShape2D_d2vdm")
+metadata/_edit_lock_ = true
+
+[node name="Hit" type="Area2D" parent="Estados/ImgHit"]
+collision_layer = 0
+monitorable = false
+metadata/_edit_lock_ = true
+
+[node name="Coli1" type="CollisionShape2D" parent="Estados/ImgHit/Hit"]
+position = Vector2(236, -72)
+shape = SubResource("CircleShape2D_42ksh")
+metadata/_edit_lock_ = true
+
+[node name="Radio" type="Node2D" parent="Estados/ImgHit/Hit/Coli1"]
+position = Vector2(-84, 4)
+metadata/_edit_lock_ = true
+
+[node name="RelojDamage" type="Timer" parent="."]
+wait_time = 0.25
+one_shot = true
+
+[connection signal="area_entered" from="Solidisimo" to="." method="_on_solid_area_entered"]
+[connection signal="area_exited" from="Solidisimo" to="." method="_on_solid_area_exited"]
+[connection signal="timeout" from="RelojDamage" to="." method="_on_reloj_damage_timeout"]

@@ -1,0 +1,277 @@
+[gd_scene load_steps=10 format=3 uid="uid://dnnawj116xnt7"]
+
+[ext_resource type="Texture2D" uid="uid://bpe1ok2qtjx2e" path="res://Sprites/particula.png" id="1_hob5y"]
+[ext_resource type="PackedScene" uid="uid://b5cy2uoweljeu" path="res://Scenes/Player.tscn" id="3_ndv2m"]
+
+[sub_resource type="Curve" id="Curve_44g6d"]
+_data = [Vector2(0, 0.285714), 0.0, 0.0, 0, 0, Vector2(0.513333, 0.538462), 0.0, 0.0, 0, 0, Vector2(0.746667, 0.879121), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_5kcs8"]
+curve = SubResource("Curve_44g6d")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_bbo76"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(576, 1, 1)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+angle_min = -720.0
+angle_max = 720.0
+direction = Vector3(0, -1, 0)
+spread = 30.0
+initial_velocity_min = 5.0
+initial_velocity_max = 20.0
+angular_velocity_min = -5.00002
+angular_velocity_max = 4.99998
+orbit_velocity_min = 9.49949e-08
+orbit_velocity_max = 9.49949e-08
+radial_velocity_min = -1.00002
+radial_velocity_max = 0.999978
+gravity = Vector3(0, -5, 0)
+linear_accel_min = 0.899998
+linear_accel_max = 0.989998
+radial_accel_min = -1.0
+radial_accel_max = 0.999998
+tangential_accel_min = -1.0
+tangential_accel_max = 0.999998
+damping_min = 0.9
+damping_max = 0.99
+scale_max = 3.0
+scale_curve = SubResource("CurveTexture_5kcs8")
+scale_over_velocity_min = 112.9
+scale_over_velocity_max = 193.55
+color = Color(1, 0.690196, 1, 0.458824)
+hue_variation_min = 0.1
+hue_variation_max = 0.36
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_83ior"]
+bg_color = Color(0.611358, 0.478565, 0.319393, 1)
+border_width_top = 50
+border_color = Color(0.542985, 0.0881839, 0.224839, 1)
+border_blend = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aq43w"]
+size = Vector2(1153, 60)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fdl6d"]
+bg_color = Color(0.255659, 0.255659, 0.255659, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.10748, 0.10748, 0.10748, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t3nha"]
+bg_color = Color(0.964742, 0.964742, 0.964742, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.273873, 0.273873, 0.273873, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Mundo" type="Node2D"]
+metadata/_edit_lock_ = true
+
+[node name="Fondo" type="GPUParticles2D" parent="."]
+position = Vector2(576, 648)
+amount = 200
+texture = ExtResource("1_hob5y")
+lifetime = 15.0
+preprocess = 15.0
+visibility_rect = Rect2(-576, -648, 1152, 648)
+process_material = SubResource("ParticleProcessMaterial_bbo76")
+metadata/_edit_lock_ = true
+
+[node name="Pared1" type="Panel" parent="."]
+offset_left = 632.0
+offset_top = 357.0
+offset_right = 1785.0
+offset_bottom = 425.0
+scale = Vector2(0.2, 1)
+theme_override_styles/panel = SubResource("StyleBoxFlat_83ior")
+metadata/_edit_lock_ = true
+
+[node name="Solido" type="StaticBody2D" parent="Pared1"]
+metadata/_edit_lock_ = true
+
+[node name="Coli" type="CollisionShape2D" parent="Pared1/Solido"]
+position = Vector2(576.5, 36)
+shape = SubResource("RectangleShape2D_aq43w")
+metadata/_edit_lock_ = true
+
+[node name="Pared2" type="Panel" parent="."]
+offset_left = 486.0
+offset_top = 454.0
+offset_right = 1639.0
+offset_bottom = 522.0
+scale = Vector2(0.1, 1)
+theme_override_styles/panel = SubResource("StyleBoxFlat_83ior")
+metadata/_edit_lock_ = true
+
+[node name="Solido" type="StaticBody2D" parent="Pared2"]
+metadata/_edit_lock_ = true
+
+[node name="Coli" type="CollisionShape2D" parent="Pared2/Solido"]
+position = Vector2(576.5, 36)
+shape = SubResource("RectangleShape2D_aq43w")
+metadata/_edit_lock_ = true
+
+[node name="Pared3" type="Panel" parent="."]
+offset_left = -99.0
+offset_top = 59.0
+offset_right = 1054.0
+offset_bottom = 127.0
+scale = Vector2(0.1, 8)
+theme_override_styles/panel = SubResource("StyleBoxFlat_83ior")
+metadata/_edit_lock_ = true
+
+[node name="Solido" type="StaticBody2D" parent="Pared3"]
+metadata/_edit_lock_ = true
+
+[node name="Coli" type="CollisionShape2D" parent="Pared3/Solido"]
+position = Vector2(576.5, 36)
+shape = SubResource("RectangleShape2D_aq43w")
+metadata/_edit_lock_ = true
+
+[node name="Pared4" type="Panel" parent="."]
+offset_left = 1135.0
+offset_top = 64.0
+offset_right = 2288.0
+offset_bottom = 132.0
+scale = Vector2(0.1, 8)
+theme_override_styles/panel = SubResource("StyleBoxFlat_83ior")
+metadata/_edit_lock_ = true
+
+[node name="Solido" type="StaticBody2D" parent="Pared4"]
+metadata/_edit_lock_ = true
+
+[node name="Coli" type="CollisionShape2D" parent="Pared4/Solido"]
+position = Vector2(576.5, 36)
+shape = SubResource("RectangleShape2D_aq43w")
+metadata/_edit_lock_ = true
+
+[node name="Pared5" type="Panel" parent="."]
+offset_left = 838.0
+offset_top = 423.0
+offset_right = 1991.0
+offset_bottom = 491.0
+scale = Vector2(0.1, 1)
+theme_override_styles/panel = SubResource("StyleBoxFlat_83ior")
+metadata/_edit_lock_ = true
+
+[node name="Solido" type="StaticBody2D" parent="Pared5"]
+metadata/_edit_lock_ = true
+
+[node name="Coli" type="CollisionShape2D" parent="Pared5/Solido"]
+position = Vector2(576.5, 36)
+shape = SubResource("RectangleShape2D_aq43w")
+metadata/_edit_lock_ = true
+
+[node name="Pared6" type="Panel" parent="."]
+offset_left = 172.0
+offset_top = 522.0
+offset_right = 1325.0
+offset_bottom = 590.0
+scale = Vector2(0.1, 1)
+theme_override_styles/panel = SubResource("StyleBoxFlat_83ior")
+metadata/_edit_lock_ = true
+
+[node name="Solido" type="StaticBody2D" parent="Pared6"]
+metadata/_edit_lock_ = true
+
+[node name="Coli" type="CollisionShape2D" parent="Pared6/Solido"]
+position = Vector2(576.5, 36)
+shape = SubResource("RectangleShape2D_aq43w")
+metadata/_edit_lock_ = true
+
+[node name="Suelo" type="Panel" parent="."]
+offset_left = 1.0
+offset_top = 581.0
+offset_right = 1154.0
+offset_bottom = 649.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_83ior")
+metadata/_edit_lock_ = true
+
+[node name="Solido" type="StaticBody2D" parent="Suelo"]
+metadata/_edit_lock_ = true
+
+[node name="Coli" type="CollisionShape2D" parent="Suelo/Solido"]
+position = Vector2(576.5, 36)
+shape = SubResource("RectangleShape2D_aq43w")
+metadata/_edit_lock_ = true
+
+[node name="Player1" parent="." instance=ExtResource("3_ndv2m")]
+position = Vector2(213, 486)
+
+[node name="Player2" parent="." instance=ExtResource("3_ndv2m")]
+position = Vector2(808, 313)
+mando = "2"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_lock_ = true
+
+[node name="Vida1" type="ProgressBar" parent="Control"]
+modulate = Color(0.739914, 0.580744, 0.314068, 1)
+layout_mode = 0
+offset_left = 58.0
+offset_top = 15.0
+offset_right = 478.0
+offset_bottom = 42.0
+theme_override_styles/background = SubResource("StyleBoxFlat_fdl6d")
+theme_override_styles/fill = SubResource("StyleBoxFlat_t3nha")
+max_value = 10.0
+step = 1.0
+value = 10.0
+show_percentage = false
+metadata/_edit_lock_ = true
+
+[node name="Keys" type="Label" parent="Control/Vida1"]
+layout_mode = 0
+offset_left = 151.0
+offset_top = 34.0
+offset_right = 240.0
+offset_bottom = 57.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "W,S,A,D,V,B"
+metadata/_edit_lock_ = true
+
+[node name="Vida2" type="ProgressBar" parent="Control"]
+modulate = Color(0.301757, 0.596365, 0.802771, 1)
+layout_mode = 0
+offset_left = 1061.0
+offset_top = 16.0
+offset_right = 1481.0
+offset_bottom = 43.0
+scale = Vector2(-1, 1)
+theme_override_styles/background = SubResource("StyleBoxFlat_fdl6d")
+theme_override_styles/fill = SubResource("StyleBoxFlat_t3nha")
+max_value = 10.0
+step = 1.0
+value = 10.0
+show_percentage = false
+metadata/_edit_lock_ = true
+
+[node name="Keys" type="Label" parent="Control/Vida2"]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 36.0
+offset_right = 339.0
+offset_bottom = 59.0
+scale = Vector2(-1, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Flechas,2,3"
+metadata/_edit_lock_ = true
